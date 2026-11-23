@@ -1,13 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import ShoppingCart from './src/screens/ShoppingCart';
-
+import Navigation from './src/navigation';
 
 export default function App() {
   return (
     <>
-      
-
-      <ShoppingCart />
+      <Navigation />
       <StatusBar style="auto" />
     </>
   );
