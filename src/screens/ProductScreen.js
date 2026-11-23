@@ -1,7 +1,9 @@
 import { StyleSheet, View, Image, FlatList, Pressable } from 'react-native';
+
 import products from '../data/products';
 
 const ProductScreen = ({ navigation }) => {
+
   return (
     <FlatList
       data={products}
