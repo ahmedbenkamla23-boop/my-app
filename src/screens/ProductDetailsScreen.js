@@ -2,6 +2,11 @@ import { StyleSheet, Text, View, Image, FlatList, useWindowDimensions,
 ScrollView, Pressable } from 'react-native';
 import products from "../data/products";
 
+
+const addToCart = () => {
+console.warn('add to cart');
+}
+
 const ProductDetailsScreen = () => {
   const product = products[0];
   const { width } = useWindowDimensions();
@@ -24,8 +29,8 @@ const ProductDetailsScreen = () => {
           <Text style={styles.description}>{product.description}</Text>
         </View>
       </ScrollView>
-      <Pressable style={styles.button}>
-        <Text style={styles.buttonText}>Ajouter au panier</Text>
+      <Pressable onPress={addToCart} style={styles.button}>
+        <Text style={styles.buttonText}>Add to cart</Text>
       </Pressable>
     </View>
   );
