@@ -26,7 +26,7 @@ const Navigation = () => {
                 </Pressable>
                 ),
     })}
-/>
+        />
         <Stack.Screen
           name="Product Detail"
           component={ProductDetailsScreen}
