@@ -1,15 +1,23 @@
-import { StyleSheet, Text, View, Image, FlatList, useWindowDimensions,
-ScrollView, Pressable } from 'react-native';
-import products from "../data/products";
-
-
-const addToCart = () => {
-console.warn('add to cart');
-}
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  FlatList,
+  useWindowDimensions,
+  ScrollView,
+  Pressable,
+} from 'react-native';
+import { useSelector } from 'react-redux';
 
 const ProductDetailsScreen = () => {
-  const product = products[0];
+  const product = useSelector((state) => state.products.selectedProduct);
+
   const { width } = useWindowDimensions();
+
+  const addToCart = () => {
+    console.warn('add to cart');
+  };
 
   return (
     <View style={{ flex: 1 }}>
@@ -23,12 +31,14 @@ const ProductDetailsScreen = () => {
           showsHorizontalScrollIndicator={false}
           pagingEnabled
         />
+
         <View style={{ padding: 20 }}>
           <Text style={styles.title}>{product.name}</Text>
           <Text style={styles.price}>${product.price}</Text>
           <Text style={styles.description}>{product.description}</Text>
         </View>
       </ScrollView>
+
       <Pressable onPress={addToCart} style={styles.button}>
         <Text style={styles.buttonText}>Add to cart</Text>
       </Pressable>
